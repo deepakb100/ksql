@@ -8,3 +8,10 @@
 
 ## Create Table and Streams
 - https://github.com/confluentinc/ksql/blob/v0.5/docs/syntax-reference.md#syntax-reference
+
+## Comands
+- CREATE TABLE resvents (ci VARCHAR, pl VARCHAR) WITH (key='ci', kafka_topic='qa-shore-res-vas.voyage-reservation', value_format='JSON');
+
+-  select ci, EXTRACTJSONFIELD(pl, '$.guestDetails[0].guestId') from resvents limit 5;
+
+- SET 'auto.offset.reset' = 'earliest';
